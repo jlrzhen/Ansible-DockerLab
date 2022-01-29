@@ -1,0 +1,4 @@
+---
+# Destroy existing containers and create new ones
+- import_playbook: destroyContainers.yml
+- import_playbook: applyContainers.yml

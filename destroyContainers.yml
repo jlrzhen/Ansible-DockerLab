@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  vars_files: 
+    - vars/default.yml
+
+  tasks:
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: "{{ docker_compose_dir }}/{{ item }}"
+        state: absent
+      loop: "{{ container_name }}"
+    - name: delete compose source templates
+      ansible.builtin.file:
+        path: "{{ docker_compose_dir }}/{{ item }}"
+        state: absent
+      loop: "{{ container_name }}"
