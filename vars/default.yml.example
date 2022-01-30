@@ -1,0 +1,9 @@
+---
+# example configuration to start services
+docker_compose_dir: <path to folder on Docker host that stores config files>
+# e.g. /home/user/Docker
+container_name:
+  - heimdall
+  - nginx
+  - code-server
+  - portainer
