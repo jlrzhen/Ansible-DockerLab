@@ -1,11 +1,15 @@
-heimdall:
-  image: lscr.io/linuxserver/heimdall:latest
-  ports:
-   - "80:80"
-   - "443:443"
-  # TODO: Add volume for persistent config file
-  environment:
-   - PUID=1000
-   - PGID=1000
-   - TZ=America/Toronto
-    
+---
+version: "2.1"
+services:
+  heimdall:
+    image: lscr.io/linuxserver/heimdall:latest
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+      - ../appData_config/heimdall:/config
+    environment:
+    - PUID=1000
+    - PGID=1000
+    - TZ=America/Toronto
+      
