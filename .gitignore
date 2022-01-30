@@ -1,2 +1,4 @@
 hosts
 default.yml
+.env
+*.env
