@@ -5,18 +5,45 @@
     - vars/default.yml
 
   tasks:
-    - name: Create a directory if it does not exist
+    - name: Create app directory if it does not exist
       ansible.builtin.file:
         path: "{{ docker_compose_dir }}/{{ item }}"
         state: directory
         mode: '0755'
       loop: "{{ container_name }}"
+    - name: Create config directory if it does not exist
+      ansible.builtin.file:
+        path: "{{ docker_compose_dir }}/appData_config"
+        state: directory
+        mode: '0755'
     - name: Copy compose source templates
       template:
         src: "docker-compose/{{ item }}/docker-compose.yml"
         dest: "{{ docker_compose_dir }}/{{ item }}/docker-compose.yml"
         mode: 0600
       loop: "{{ container_name }}"
+    - name: check if global .env exists
+      local_action: stat path="docker-compose/.env"
+      register: check_global_env
+    - name: Copy global .env file
+      template:
+        src: "docker-compose/.env"
+        dest: "{{ docker_compose_dir }}/.env"
+        mode: 0600
+      when: check_global_env.stat.exists
+    - name: check if app .env exists
+      # https://stackoverflow.com/questions/28855236/copy-local-file-if-exists-using-ansible
+      local_action: stat path="docker-compose/{{ item }}/.env"
+      loop: "{{ container_name }}"
+      register: check_env
+    - name: Copy app .env files
+      # https://stackoverflow.com/questions/36629599/stat-exists-with-list-of-variables-in-ansible
+      template:
+        src: "docker-compose/{{ item.item }}/.env"
+        dest: "{{ docker_compose_dir }}/{{ item.item }}/.env"
+        mode: 0600
+      loop: "{{ check_env.results }}"
+      when: item.stat.exists
     - name: Create and start services
       community.docker.docker_compose:
         project_src: "{{ docker_compose_dir }}/{{ item }}"
