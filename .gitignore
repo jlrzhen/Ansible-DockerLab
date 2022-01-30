@@ -2,4 +2,3 @@ hosts
 default.yml
 .env
 *.env
-Makefile
