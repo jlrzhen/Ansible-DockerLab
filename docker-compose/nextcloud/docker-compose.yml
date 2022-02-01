@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - ../appData_config/nextcloud/db:/var/lib/mysql
+    env_file:
+      - .env
+
+  app:
+    image: nextcloud
+    ports:
+      - 8980:80
+    links:
+      - db
+    volumes:
+      - ../appData_config/nextcloud/app:/var/www/html
+    env_file:
+      - .env
