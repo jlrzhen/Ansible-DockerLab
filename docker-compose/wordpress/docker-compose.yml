@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 8090:80
+    env_file:
+      - .env
+    volumes:
+      - ../appData_config/wordpress/app:/var/www/html
+
+  db:
+    image: mysql:5.7
+    env_file:
+      - .env
+    volumes:
+      - ../appData_config/wordpress/db:/var/lib/mysql
