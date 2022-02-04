@@ -16,4 +16,5 @@
 <br/>  e. run enableDocker.sh
 
 2. clone https://github.com/jlrzhen/Ansible-DockerLab
-<br/>  a. make apply
+<br/>  a. configure vars/default.yml
+<br/>  b. make apply
