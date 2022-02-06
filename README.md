@@ -11,10 +11,9 @@
 1. clone https://github.com/jlrzhen/controllerSetup-Ubuntu-20.04
 <br/>  a. run controllerSetup.sh 
 <br/>  b. copy hosts.example to /etc/ansible/hosts
-<br/>  c. printf "\nexport PATH=\\"/home/$USER/.local/bin:$PATH\\"" >> .bashrc
-<br/>  d. restart shell
-<br/>  e. ansible-playbook dockerHostSetup.yml -K
-<br/>  f. run enableDocker.sh
+<br/>  c. restart shell
+<br/>  d. ansible-playbook dockerHostSetup.yml -K
+<br/>  e. run enableDocker.sh
 
 2. clone https://github.com/jlrzhen/Ansible-DockerLab
 <br/>  a. configure vars/default.yml and rename to default.yml
