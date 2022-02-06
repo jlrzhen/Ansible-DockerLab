@@ -2,7 +2,8 @@
 
 rebuild:
 	@echo "Destroying and rebuilding containers..."
-	ansible-playbook main.yml -K -i hosts
+	ansible-playbook main.yml -K
+	#ansible-playbook main.yml -K -i hosts
 apply:
 	@echo "Creating containers..."
 	ansible-playbook applyContainers.yml -K -i hosts
