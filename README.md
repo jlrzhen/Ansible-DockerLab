@@ -18,4 +18,5 @@
 
 2. clone https://github.com/jlrzhen/Ansible-DockerLab
 <br/>  a. configure vars/default.yml and rename to default.yml
-<br/>  b. make apply
+<br/>  b. pip install docker docker-host
+<br/>  c. make apply
