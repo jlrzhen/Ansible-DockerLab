@@ -9,9 +9,9 @@
 
 # Example Instructions
 1. clone https://github.com/jlrzhen/controllerSetup-Ubuntu-20.04
-<br/>  a. run controllerSetup.sh 
-<br/>  b. copy hosts.example to /etc/ansible/hosts
-<br/>  c. restart shell
+<br/>  a. copy hosts.example to /etc/ansible/hosts
+<br/>  b. run controllerSetup.sh 
+<br/>  c. restart shell to reload bashrc
 <br/>  d. ansible-playbook dockerHostSetup.yml -K
 <br/>  e. run enableDocker.sh
 
