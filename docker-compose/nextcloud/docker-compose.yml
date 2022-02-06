@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    image: mariadb
+    image: mysql
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     volumes:
       - ../appData_config/nextcloud/db:/var/lib/mysql
