@@ -17,5 +17,5 @@
 
 2. clone https://github.com/jlrzhen/Ansible-DockerLab
 <br/>  a. configure vars/default.yml and rename to default.yml
-<br/>  b. pip install docker docker-host
+<br/>  b. pip install docker docker-compose
 <br/>  c. make apply
