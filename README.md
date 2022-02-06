@@ -11,7 +11,7 @@
 1. clone https://github.com/jlrzhen/controllerSetup-Ubuntu-20.04
 <br/>  a. run controllerSetup.sh 
 <br/>  b. copy hosts.example to /etc/ansible/hosts
-<br/>  c. printf "\nexport PATH=\"/home/$USER/.local/bin:$PATH\"" >> .bashrc
+<br/>  c. printf "\nexport PATH=\\"/home/$USER/.local/bin:$PATH\\"" >> .bashrc
 <br/>  d. ansible-playbook dockerHostSetup.yml -K
 <br/>  e. run enableDocker.sh
 
