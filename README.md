@@ -20,3 +20,6 @@
 <br/>  b. configure docker-compose/\*/.env
 <br/>  c. pip install docker docker-compose
 <br/>  d. make apply
+
+# Migrating appData
+- Make sure to chown -R root after extracting and before starting services
