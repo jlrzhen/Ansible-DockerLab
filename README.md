@@ -23,3 +23,5 @@
 
 # Migrating appData
 - Make sure to chown -R root after extracting and before starting services
+- Jellyfin requires chown user
+- Disable nextcloud appData
