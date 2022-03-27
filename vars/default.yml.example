@@ -1,5 +1,6 @@
 ---
 # example configuration to start services
+ansible_python_interpreter: /usr/bin/python3.8
 docker_compose_dir: <path to folder on Docker host that stores config files>
 # e.g. /home/user/Docker
 container_name:
