@@ -8,6 +8,8 @@
   - Jellyfin
 
 # Example Instructions
+0. run update and upgrades (if required)
+
 1. clone https://github.com/jlrzhen/controllerSetup-Ubuntu-20.04
 <br/>  a. copy hosts.example to /etc/ansible/hosts
 <br/>  b. install python3.8
