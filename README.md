@@ -10,10 +10,11 @@
 # Example Instructions
 1. clone https://github.com/jlrzhen/controllerSetup-Ubuntu-20.04
 <br/>  a. copy hosts.example to /etc/ansible/hosts
-<br/>  b. run controllerSetup.sh 
-<br/>  c. restart shell to reload bashrc
-<br/>  d. ansible-playbook dockerHostSetup.yml -K
-<br/>  e. run enableDocker.sh
+<br/>  b. install python3.8
+<br/>  c. run controllerSetup.sh 
+<br/>  d. restart shell to reload bashrc
+<br/>  e. ansible-playbook dockerHostSetup.yml -K
+<br/>  f. run enableDocker.sh
 
 2. clone https://github.com/jlrzhen/Ansible-DockerLab
 <br/>  a. configure vars/default.yml and rename to default.yml
